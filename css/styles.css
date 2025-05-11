@@ -1,0 +1,75 @@
+:root {
+    --primary: #E34F32;
+    --secondary: #333;
+    --accent: #4A90E2;
+}
+
+/* Базовый дизайн */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 2rem;
+    color: var(--secondary);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: transform 0.2s; /* Анимация лого */
+}
+
+.logo:hover {
+    transform: rotate(15deg);
+}
+
+/* Анимация результатов */
+.gsc-result {
+    animation: pop-in 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: box-shadow 0.2s;
+}
+
+.gsc-result:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes pop-in {
+    0% { 
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Иконки (сохранены новые стили) */
+.result-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    opacity: 0;
+    animation: icon-fade 0.3s 0.2s forwards;
+}
+
+@keyframes icon-fade {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
